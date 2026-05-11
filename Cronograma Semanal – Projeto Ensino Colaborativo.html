@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cronograma Semanal - AEE Expandido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f4f7fc; padding: 20px; }
+        :root { --azul-escuro: #0a2f6c; --vermelho: #d32f2f; --branco: #fff; --cinza-borda: #e0e4e9; }
+        .container { max-width: 210mm; margin: 0 auto; background: var(--branco); border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1); }
+        @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 0.8rem; } }
+        header { background: var(--azul-escuro); color: white; padding: 0.6rem 1rem; border-bottom: 4px solid var(--vermelho); border-radius: 20px 20px 0 0; margin-bottom: 1rem; }
+        .header-flex { display: flex; align-items: center; gap: 1rem; }
+        .logo img { max-height: 58px; background: white; padding: 4px; border-radius: 8px; }
+        h2 { color: var(--azul-escuro); margin: 1rem 0; border-left: 6px solid var(--vermelho); padding-left: 1rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { border: 1px solid var(--cinza-borda); padding: 8px; text-align: left; vertical-align: top; }
+        th { background: var(--azul-escuro); color: white; }
+        .aviso { margin-top: 1rem; font-size: 0.8rem; background: #eef3fb; padding: 0.8rem; border-radius: 12px; }
+        footer { margin-top: 1rem; text-align: center; font-size: 0.7rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div><h2 style="margin:0; color:white; border-left: none;">Cronograma Semanal – Projeto Ensino Colaborativo</h2></div>
+        </div>
+    </header>
+    <div class="row" style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+        <span><strong>Escola:</strong> ___________________________</span>
+        <span><strong>Professor Especializado:</strong> _________________</span>
+        <span><strong>Semana:</strong> ____/____ a ____/____</span>
+    </div>
+    <table>
+        <thead><tr><th>Horário</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr></thead>
+        <tbody>
+            <tr><td>8h – 9h</td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>9h – 10h</td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>10h – 11h</td><td colspan="5" style="text-align:center; background:#eef3fb;">ATPC / Planejamento coletivo</td></tr>
+            <tr><td>11h – 12h</td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>13h – 14h</td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>14h – 15h</td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+    </table>
+    <div class="aviso">
+        <strong>Legenda sugerida:</strong> 🔹 Planejamento conjunto 🔹 Observação em sala 🔹 Apoio co-docente 🔹 Reunião com famílias 🔹 Elaboração de materiais acessíveis.<br>
+        O cronograma deve ficar afixado na sala da gestão escolar.
+    </div>
+    <footer>Resolução SEDUC 129/2025 – AEE Expandido</footer>
+</div>
+</body>
+</html>

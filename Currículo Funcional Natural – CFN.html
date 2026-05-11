@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Currículo Funcional Natural - Plano de Ensino Individualizado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --cinza-borda: #e0e4e9;
+        }
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--branco);
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0.8rem;
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+        header {
+            background-color: var(--azul-escuro);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-bottom: 4px solid var(--vermelho);
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 1.5rem;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            max-height: 58px;
+            background: white;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        .titulo-header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .titulo-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .cabecalho-secao {
+            background: var(--azul-claro);
+            padding: 0.5rem 1rem;
+            margin: 1.2rem 0 0.8rem 0;
+            font-weight: 700;
+            font-size: 1rem;
+            border-left: 5px solid var(--azul-escuro);
+        }
+        .campo {
+            margin-bottom: 1rem;
+        }
+        .campo label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+        .linha {
+            border-bottom: 1px solid #000;
+            margin-top: 0.2rem;
+            margin-bottom: 0.5rem;
+            height: 28px;
+        }
+        .linha-grande {
+            min-height: 45px;
+            border-bottom: 1px solid #000;
+            margin-bottom: 0.8rem;
+        }
+        .row {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        .col {
+            flex: 1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid var(--cinza-borda);
+            padding: 0.75rem;
+            vertical-align: top;
+            font-size: 0.85rem;
+        }
+        th {
+            background: var(--azul-escuro);
+            color: white;
+            font-weight: 600;
+        }
+        .checkbox-group {
+            margin: 0.5rem 0;
+        }
+        .badge {
+            background: var(--azul-claro);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        .assinatura {
+            margin-top: 2rem;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #555;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1rem;
+        }
+        .referencia {
+            font-size: 0.7rem;
+            color: #555;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div class="titulo-header">
+                <h1>Currículo Funcional Natural – CFN</h1>
+                <p>Plano de Ensino Individualizado</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="cabecalho-secao">1. Identificação do Estudante</div>
+    <div class="row">
+        <div class="col"><label>Nome completo:</label><div class="linha"></div></div>
+        <div class="col"><label>Data de nascimento:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Escola / URE:</label><div class="linha"></div></div>
+        <div class="col"><label>Ano/Série / Turma:</label><div class="linha"></div></div>
+    </div>
+    <div class="campo"><label>Diagnóstico/Elegibilidade (deficiência, TEA, AH/SD):</label><div class="linha"></div></div>
+
+    <div class="cabecalho-secao">2. Fundamentação do Currículo Funcional Natural (CFN)</div>
+    <p style="margin-bottom: 0.8rem;">O Currículo Funcional Natural é uma proposta metodológica de ensino que visa desenvolver habilidades práticas e funcionais, promovendo a autonomia e a qualidade de vida do estudante em seus ambientes naturais (casa, escola, comunidade). Fundamenta-se nos seguintes princípios:</p>
+    <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+        <li>Conhecer o aluno como pessoa, considerando suas potencialidades e interesses.</li>
+        <li>Ensinar habilidades que sejam úteis e aplicáveis no cotidiano.</li>
+        <li>Utilizar contextos reais e significativos para a aprendizagem.</li>
+        <li>Envolver a família e a comunidade no processo educativo.</li>
+        <li>Promover a generalização das habilidades para diferentes situações.</li>
+    </ul>
+    <div class="referencia">Fonte: SUPLINO, Maryse. Currículo Funcional Natural: guia prático para a educação na área de autismo e deficiência mental. Brasília: SEDH/CORDE, 2005. – e demais referências da Política de Educação Especial do Estado de São Paulo.</div>
+
+    <div class="cabecalho-secao">3. Áreas de Habilidades Funcionais</div>
+    <p>Selecione as áreas prioritárias para o estudante e descreva os objetivos específicos:</p>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Autocuidado e vida diária</strong> (alimentação, higiene, vestuário, organização pessoal)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Comunicação e linguagem</strong> (expressão oral, alternativa, compreensão, LIBRAS, pranchas de comunicação)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Socialização e interação</strong> (relações com pares, adultos, comportamentos sociais adequados)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Vida doméstica e responsabilidades</strong> (tarefas domésticas, cuidado com o ambiente, organização)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Lazer, esporte e cultura</strong> (atividades de tempo livre, hobbies, participação em eventos)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Segurança e saúde</strong> (prevenção de acidentes, cuidados básicos de saúde, reconhecimento de perigos)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Pré-profissionalização e trabalho</strong> (rotinas de trabalho, habilidades profissionais básicas, emprego apoiado)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Habilidades acadêmicas funcionais</strong> (leitura, escrita, cálculo em situações práticas)</div>
+    <div class="checkbox-group"><input type="checkbox"> <strong>Locomoção e mobilidade</strong> (deslocamento seguro, uso de transporte, orientação espacial)</div>
+
+    <div class="cabecalho-secao">4. Metas e Estratégias por Área de Habilidade</div>
+    <p>Para cada área selecionada, descreva as metas, estratégias de ensino, recursos e contextos de aplicação.</p>
+    <table>
+        <thead>
+            <tr><th>Área</th><th>Metas / Objetivos funcionais</th><th>Estratégias de ensino</th><th>Recursos / apoios</th><th>Contexto de aplicação</th></tr>
+        </thead>
+        <tbody>
+            <tr><td style="height: 60px;"></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td style="height: 60px;"></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td style="height: 60px;"></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+    </table>
+    <div class="campo"><label>Outras necessidades específicas (ex.: redução de comportamentos desafiadores, adaptações sensoriais):</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">5. Contextos de Aprendizagem</div>
+    <p>O CFN privilegia o ensino em ambientes naturais. Para cada contexto, descreva as ações previstas:</p>
+    <div class="campo"><label><span class="badge">Escola</span> (sala de aula, pátio, biblioteca, cantina):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label><span class="badge">Família / Lar</span> (rotinas domésticas, participação em tarefas):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label><span class="badge">Comunidade</span> (supermercado, farmácia, transporte, espaços públicos):</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">6. Avaliação e Monitoramento</div>
+    <div class="campo"><label>Instrumentos de avaliação (observação, registros anedóticos, checklist, portfólio):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Periodicidade da avaliação (semanal, quinzenal, bimestral):</label><div class="linha"></div></div>
+    <div class="campo"><label>Critérios de progresso (domínio com ajuda, independência parcial, autonomia plena):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Registro de evoluções e ajustes no plano:</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">7. Articulação com o PAEE e o PEI</div>
+    <div class="campo"><label>Como as metas do CFN se integram ao PAEE (AEE) e ao PEI (sala de aula comum):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Profissionais envolvidos (Professor Especializado, Professor Regente, PAE, terapeutas, família):</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">8. Responsáveis pela Elaboração e Acompanhamento</div>
+    <div class="row">
+        <div class="col"><label>Professor Especializado (nome e RF):</label><div class="linha"></div></div>
+        <div class="col"><label>Professor Regente / Componente Curricular:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Coordenador de Gestão Pedagógica:</label><div class="linha"></div></div>
+        <div class="col"><label>Família / Responsável (ciência e participação):</label><div class="linha"></div></div>
+    </div>
+
+    <div class="assinatura">
+        <div class="row">
+            <div class="col">_________________________<br>Professor Especializado</div>
+            <div class="col">_________________________<br>Professor Regente</div>
+            <div class="col">_________________________<br>Coordenador de Gestão Pedagógica</div>
+        </div>
+        <div class="row" style="margin-top: 0.8rem;">
+            <div class="col">_________________________<br>Diretor de Escola/Escolar</div>
+            <div class="col">_________________________<br>Responsável / Familiar</div>
+        </div>
+        <div class="campo" style="margin-top: 1rem;">
+            <label>Data da elaboração / revisão:</label><div class="linha" style="width: 40%;"></div>
+        </div>
+    </div>
+
+    <footer>
+        Este plano deve ser revisado periodicamente (bimestralmente ou conforme necessidade).<br>
+        O Currículo Funcional Natural é uma metodologia complementar, integrada ao PAEE e ao PEI, alinhada à Política de Educação Especial do Estado de São Paulo (Decreto nº 67.635/2023, Resolução SEDUC nº 129/2025).
+    </footer>
+</div>
+</body>
+</html>

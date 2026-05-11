@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>URE-CAIEIRAS · AEE</title>
+    <!-- Fontes e ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+        }
+
+        :root {
+            --azul-profundo: #0a2f6c;
+            --vermelho-destaque: #d32f2f;
+            --preto-texto: #212121;
+            --cinza-fundo: #f5f7fa;
+            --branco-card: #ffffff;
+            --cinza-borda: #e0e4e9;
+            --verde-acesso: #2e7d32;
+            --cinza-escuro: #2c3e50;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--azul-profundo);
+            color: white;
+            padding: 0.6rem 0;
+            border-bottom: 4px solid var(--vermelho-destaque);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-height: 58px;
+            width: auto;
+            display: block;
+            border-radius: 8px;
+            background: white;
+            padding: 4px;
+        }
+
+        .titulo-header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .titulo-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Search + Upload */
+        .action-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-wrapper {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9aa3b4;
+        }
+
+        .search-wrapper input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.8rem;
+            border: 1px solid var(--cinza-borda);
+            border-radius: 60px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .search-wrapper input:focus {
+            outline: none;
+            border-color: var(--azul-profundo);
+            box-shadow: 0 0 0 3px rgba(10,47,108,0.1);
+        }
+
+        .upload-btn {
+            background: var(--vermelho-destaque);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+            border: 2px solid transparent;
+        }
+
+        .upload-btn:hover {
+            background: white;
+            color: var(--vermelho-destaque);
+            border-color: var(--vermelho-destaque);
+        }
+
+        /* Cards de pastas */
+        .folder-card {
+            background: white;
+            border-radius: 28px;
+            border: 0.5px solid var(--cinza-borda);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .folder-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .folder-header {
+            padding: 1.2rem 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: white;
+            border-left: 6px solid transparent;
+            transition: background 0.2s, border-left 0.2s;
+        }
+
+        .folder-header:hover {
+            background: #f8fafd;
+            border-left-color: var(--azul-profundo);
+        }
+
+        .folder-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .folder-title i {
+            font-size: 2rem;
+            color: var(--azul-profundo);
+        }
+
+        .folder-info h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--preto-texto);
+        }
+
+        .folder-info p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.2rem;
+        }
+
+        .badge-count {
+            background: var(--azul-profundo);
+            color: white;
+            border-radius: 60px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.8rem;
+        }
+
+        .arrow-icon {
+            color: #9aa3b4;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        /* Subpastas container */
+        .subfolder-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: #f9fbfe;
+            border-top: 0.5px solid transparent;
+        }
+
+        .subfolder-container.open {
+            max-height: 1800px;
+            border-top-color: var(--cinza-borda);
+        }
+
+        .subfolder-list {
+            padding: 1rem 1.8rem 1.5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .subfolder-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid var(--cinza-borda);
+            transition: all 0.2s;
+        }
+
+        .subfolder-item:hover {
+            border-color: var(--azul-profundo);
+            transform: translateX(4px);
+        }
+
+        .subfolder-name {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex: 1;
+        }
+
+        .subfolder-name i {
+            color: var(--vermelho-destaque);
+            font-size: 1.2rem;
+        }
+
+        /* Botão AEE personalizado (documentos) */
+        .subfolder-link-docs {
+            background: #eef2fa;
+            border: none;
+            color: var(--azul-profundo);
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .subfolder-link-docs i {
+            font-size: 0.9rem;
+            color: var(--vermelho-destaque);
+        }
+
+        .subfolder-link-docs:hover {
+            background: var(--azul-profundo);
+            color: white;
+        }
+
+        .subfolder-link-docs:hover i {
+            color: white;
+        }
+
+        /* Modal AEE (documentos e estruturas legais) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 32px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 1.8rem;
+            position: relative;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.25s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eef2fa;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            font-weight: 700;
+        }
+
+        .close-modal {
+            background: transparent;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.2s;
+        }
+
+        .close-modal:hover {
+            color: var(--vermelho-destaque);
+        }
+
+        .modal-school-name {
+            background: #f0f4fa;
+            padding: 0.75rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--azul-profundo);
+            display: inline-block;
+        }
+
+        .doc-category {
+            margin-bottom: 1.8rem;
+        }
+
+        .doc-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid var(--vermelho-destaque);
+            padding-left: 0.8rem;
+            color: var(--cinza-escuro);
+        }
+
+        .doc-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .doc-btn {
+            background: #f8fafd;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            color: var(--azul-profundo);
+            border: 1px solid var(--cinza-borda);
+        }
+
+        .doc-btn i {
+            color: var(--vermelho-destaque);
+            font-size: 0.9rem;
+        }
+
+        .doc-btn:hover {
+            background: var(--azul-profundo);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .doc-btn:hover i {
+            color: white;
+        }
+
+        .observacao-nota {
+            margin-top: 1.5rem;
+            background: #fff7e5;
+            padding: 0.8rem;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            color: #b95f00;
+            border-left: 3px solid #ffb347;
+        }
+
+        .observacao-nota i {
+            margin-right: 6px;
+        }
+
+        /* Recent Section */
+        .recent-section {
+            margin-top: 3rem;
+        }
+
+        .recent-section h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--azul-profundo);
+            border-left: 6px solid var(--vermelho-destaque);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .recent-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem;
+            border: 1px solid var(--cinza-borda);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .recent-card:hover {
+            border-color: var(--azul-profundo);
+            transform: translateX(4px);
+        }
+
+        .recent-icon {
+            width: 48px;
+            height: 48px;
+            background: #eef3fb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.4rem;
+        }
+
+        .recent-content p {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .recent-content span {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        footer {
+            background-color: var(--preto-texto);
+            color: #ccc;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted var(--vermelho-destaque);
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1rem;
+            }
+            .header-flex {
+                flex-direction: column;
+                align-items: start;
+            }
+            .folder-header {
+                padding: 1rem;
+            }
+            .subfolder-list {
+                padding-left: 1.8rem;
+            }
+            .doc-links {
+                flex-direction: column;
+            }
+            .modal-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo Hub de Evidências">
+        </div>
+        <div class="titulo-header">
+            <h1>URE-CAIEIRAS · AEE</h1>
+            <p>Centralize os registros - Acesse as pastas e documentos da Resolução SEDUC 129/2025 (AEE).</p>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="action-bar">
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Pesquisar pasta, escola ou documento...">
+        </div>
+        <button class="upload-btn" onclick="window.open('https://drive.google.com/drive/folders/1vCRx7o3E1CSJlRjV9B-lg482xsuVqeQg?usp=drive_link', '_blank')">
+            <i class="fas fa-cloud-upload-alt"></i> Upload Direto AEE
+        </button>
+    </div>
+
+    <!-- PASTA AEE GLOBAL (DOCUMENTOS LEGAIS E ORIENTAÇÕES) -->
+    <div class="folder-card" data-folder="aee-documentos">
+        <div class="folder-header" onclick="toggleFolder('aee-documentos')">
+            <div class="folder-title">
+                <i class="fas fa-book-open" style="color: var(--vermelho-destaque);"></i>
+                <div class="folder-info">
+                    <h3>📄 RESOLUÇÃO SEDUC 129/2025 - AEE </h3>
+                    <p>Documentos orientadores, PAEE, Estudo de Caso, Currículo Funcional e portfólios</p>
+                </div>
+            </div>
+            <i class="fas fa-chevron-down arrow-icon" id="arrow-aee-documentos"></i>
+        </div>
+        <div class="subfolder-container" id="aee-documentos">
+            <div class="subfolder-list">
+                <div class="subfolder-item"><div class="subfolder-name"><i class="fas fa-gavel"></i> <span>Resolução SEDUC 129/2025 (Completa)</span></div><a href="https://drive.google.com/file/d/1tKAYRtM8WSXB4ytXBd7kQAbae82j8cHI/view?usp=sharing" target="_blank" class="subfolder-link">Visualizar <i class="fas fa-external-link-alt"></i></a></div>
+                <div class="subfolder-item"><div class="subfolder-name"><i class="fas fa-chalkboard-user"></i> <span>Atendimento Educacional Especializado – AEE (Parte 1)</span></div><a href="https://drive.google.com/file/d/1v7bWx8voK5yJbidwUVZZXa7EsCmqTTmg/view?usp=sharing" target="_blank" class="subfolder-link">Visualizar <i class="fas fa-external-link-alt"></i></a></div>
+                <div class="subfolder-item"><div class="subfolder-name"><i class="fas fa-users"></i> <span>Atendimento Educacional Especializado – AEE (Parte 2)</span></div><a href="https://drive.google.com/file/d/1ClrbfWBdUpWdsVFHRXxZuok4I0RoRNpc/view?usp=sharing" target="_blank" class="subfolder-link">Visualizar <i class="fas fa-external-link-alt"></i></a></div>
+                <div class="subfolder-item"><div class="subfolder-name"><i class="fas fa-briefcase"></i> <span>Papéis e Responsabilidades</span></div><a href="https://drive.google.com/file/d/11wNVVMHrTLNqH2L4tA31r6csweLKGMXN/view?usp=sharing" target="_blank" class="subfolder-link">Visualizar <i class="fas fa-external-link-alt"></i></a></div>
+                <div class="subfolder-item"><div class="subfolder-name"><i class="fas fa-people-arrows"></i> <span>Comissões de Recursos, Acessibilidade e TA</span></div><a href="https://drive.google.com/file/d/1onS5MS5TGKYXARyk0xuoCy6p7Ju-0GSv/view?usp=sharing" target="_blank" class="subfolder-link">Visualizar <i class="fas fa-external-link-alt"></i></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PASTAS PECs - cada escola com link dinâmico para modal com documentos AEE ========== -->
+
+    <!-- PECs Caieiras -->
+    <div class="folder-card" data-folder="pecs-caieiras">
+        <div class="folder-header" onclick="toggleFolder('pecs-caieiras')">
+            <div class="folder-title"><i class="fas fa-folder-open" style="color: var(--vermelho-destaque);"></i><div class="folder-info"><h3>PECs - Escolas de Caieiras <span class="badge-count">14</span></h3><p>Documentação AEE - Clique em "Documentos AEE"</p></div></div>
+            <i class="fas fa-chevron-down arrow-icon" id="arrow-pecs-caieiras"></i>
+        </div>
+        <div class="subfolder-container" id="pecs-caieiras">
+            <div class="subfolder-list" id="lista-caieiras"></div>
+        </div>
+    </div>
+
+    <!-- PECs Cajamar -->
+    <div class="folder-card" data-folder="pecs-cajamar">
+        <div class="folder-header" onclick="toggleFolder('pecs-cajamar')">
+            <div class="folder-title"><i class="fas fa-folder-open" style="color: var(--vermelho-destaque);"></i><div class="folder-info"><h3>PECs - Escolas de Cajamar <span class="badge-count">5</span></h3><p>Documentação AEE - Acesse os formulários</p></div></div>
+            <i class="fas fa-chevron-down arrow-icon" id="arrow-pecs-cajamar"></i>
+        </div>
+        <div class="subfolder-container" id="pecs-cajamar"><div class="subfolder-list" id="lista-cajamar"></div></div>
+    </div>
+
+    <!-- PECs Francisco Morato -->
+    <div class="folder-card" data-folder="pecs-morato">
+        <div class="folder-header" onclick="toggleFolder('pecs-morato')">
+            <div class="folder-title"><i class="fas fa-folder-open" style="color: var(--vermelho-destaque);"></i><div class="folder-info"><h3>PECs - Escolas Francisco Morato <span class="badge-count">17</span></h3><p>Documentação AEE</p></div></div>
+            <i class="fas fa-chevron-down arrow-icon" id="arrow-pecs-morato"></i>
+        </div>
+        <div class="subfolder-container" id="pecs-morato"><div class="subfolder-list" id="lista-morato"></div></div>
+    </div>
+
+    <!-- PECs Franco da Rocha -->
+    <div class="folder-card" data-folder="pecs-rocha">
+        <div class="folder-header" onclick="toggleFolder('pecs-rocha')">
+            <div class="folder-title"><i class="fas fa-folder-open" style="color: var(--vermelho-destaque);"></i><div class="folder-info"><h3>PECs - Escolas Franco da Rocha <span class="badge-count">17</span></h3><p>Documentação AEE</p></div></div>
+            <i class="fas fa-chevron-down arrow-icon" id="arrow-pecs-rocha"></i>
+        </div>
+        <div class="subfolder-container" id="pecs-rocha"><div class="subfolder-list" id="lista-rocha"></div></div>
+    </div>
+
+    <!-- PECs Mairiporã -->
+    <div class="folder-card" data-folder="pecs-mairipora">
+        <div class="folder-header" onclick="toggleFolder('pecs-mairipora')">
+            <div class="folder-title"><i class="fas fa-folder-open" style="color: var(--vermelho-destaque);"></i><div class="folder-info"><h3>PECs - Escolas Mairiporã <span class="badge-count">14</span></h3><p>Documentação AEE</p></div></div>
+            <i class="fas fa-chevron-down arrow-icon" id="arrow-pecs-mairipora"></i>
+        </div>
+        <div class="subfolder-container" id="pecs-mairipora"><div class="subfolder-list" id="lista-mairipora"></div></div>
+    </div>
+
+    <!-- Recentes / destaques -->
+    <div class="recent-section">
+        <h2><i class="fas fa-history"></i> Acessos rápidos aos documentos AEE mais utilizados</h2>
+        <div class="recent-grid">
+            <div class="recent-card" onclick="openGlobalDocs('PAEE')"><div class="recent-icon"><i class="fas fa-clipboard-list"></i></div><div class="recent-content"><p>Plano de AEE (PAEE)</p><span>Modelo e orientações SEDUC 129/2025</span></div></div>
+            <div class="recent-card" onclick="openGlobalDocs('ESTUDO_CASO')"><div class="recent-icon"><i class="fas fa-chalkboard-user"></i></div><div class="recent-content"><p>Estudo de Caso</p><span>Base para avaliação inicial</span></div></div>
+            <div class="recent-card" onclick="openGlobalDocs('CURRICULO')"><div class="recent-icon"><i class="fas fa-brain"></i></div><div class="recent-content"><p>Currículo Funcional Natural</p><span>Estratégias e adaptações</span></div></div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>URE-CAIEIRAS · Resolução SEDUC 129/2025 AEE</p>
+        <p>Central de Atendimento: 0800 77 000 12 | <a href="#">atendimento.educacao.sp.gov.br</a></p>
+    </div>
+</footer>
+
+<!-- MODAL AEE (documentos dinâmicos) -->
+<div id="modalAEE" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2><i class="fas fa-file-alt"></i> Documentos AEE</h2>
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+        </div>
+        <div id="modalSchoolName" class="modal-school-name"></div>
+        <div id="modalDocumentList"></div>
+        <div class="observacao-nota"><i class="fas fa-info-circle"></i> Base legal: Resolução SEDUC 129/2025 – Documentos obrigatórios para o Atendimento Educacional Especializado (AEE).</div>
+    </div>
+</div>
+
+<script>
+    // Estrutura das escolas e links para pastas no Drive (acesso direto dos arquivos)
+    const schoolsDatabase = {
+        caieiras: [
+            { name: "E.E. ALADINO POLON", pastaId: "1pBCPBGioF9DfUm0bFIj2r_7alIig7ssH" },
+            { name: "E.E. ALBERTO GRAF – CAPITÃO", pastaId: "1CvE3VoWrLWW2lZ2e7sCzoCfGob76d5jp" },
+            { name: "E.E. ALBINO FIORE", pastaId: "1mYonu5_f-nxDiVriigeGD28Z5Zgg2L2u" },
+            { name: "E.E. ALFRIED THEODOR WEISZFLOG", pastaId: "178a8j3bHUNKcQyBP42_uqHgZbwt4k_en" },
+            { name: "E.E. ARMANDO SESTINI", pastaId: "1N28O9jb6E1ctk5lGJpsn01lfV5pttNcf" },
+            { name: "E.E. FRANCISCO GONÇALVES VIEIRA", pastaId: "19oCSJAOTUFxCHBfjDbk-ql1kAOHktdzm" },
+            { name: "E.E. ISAÍAS LUIZ MATIAZZO", pastaId: "1v-Mj8mDCkbu9hoQq1rMuLmeCvxKDbp_h" },
+            { name: "E.E. ISAURA VALENTINI HANSER", pastaId: "1cIKNdPJf5ceMoZSbkZ1Q6OgHp0QEX77o" },
+            { name: "E.E. JOSÉ CARLOS DA SILVA JUNIOR", pastaId: "1kyApZamzKSH8ZoWbTQNgL721rOdAguN3" },
+            { name: "E.E. MARIO TOLEDO DE MORAES", pastaId: "17RgSZex_4o6TgAcgx7w6jjkwPWKqgmAF" },
+            { name: "E.E. NELSON MANZANARES", pastaId: "1mYWn5zjqxZflHZqX25g6yyf0mGQb7RlF" },
+            { name: "E.E. OLINDO DÁRTORA", pastaId: "1IwSFXjNhJ4ghImJjlKS_l3K9L0SrvluT" },
+            { name: "E.E. OTTO WEISZFLOG", pastaId: "1AVp5MrlCI7XS7S2mnmU6Zm4aC1FBHvh8" },
+            { name: "E.E. WALTHER WEISZFLOG", pastaId: "1x3f82_feYzxumKEKLjPZioYIculBwg8l" }
+        ],
+        cajamar: [
+            { name: "E.E. ANA MARIA GARRIDO ORLANDIN", pastaId: "1r9cqwKC-JXgKCXsBx03VxomtqX4T8aHh" },
+            { name: "E.E. ÉLCIO JOSÉ PEREIRA COTRIM", pastaId: "1JTA-kQ7Ew9oXfao2Lht0jjrGedJWSuUu" },
+            { name: "E.E. JOAQUIM MARQUES DA SILVA SOBRINHO", pastaId: "1jLowHK-a2L4XmSyqBD5jGhg8vFpJ89EA" },
+            { name: "E.E. SUZANA DIAS", pastaId: "10ovXF25pXhJ82OS7LZsBY1FpBZTzmTBX" },
+            { name: "E.E. WALTER RIBAS DE ANDRADE", pastaId: "1TG2BmrkTh2mmfYLT5GUd8UxlfaJotez5" }
+        ],
+        morato: [
+            "E.E. AFONSO MORENO:1_Vml8dgH0TRPUil08Yx-Zy0lrkTD8_pu",
+            "E.E. APARECIDO ROBERTO TONELLOTTI:1Pih9oDzDg3eails28bSWH8UWfYd5hKOq",
+            "E.E. BELÉM DA SERRA:1Vvf47CEzx_ZdCZ7esPdI3Vp5elhIXei4",
+            "E.E. BUENO DE AZEVEDO FILHO:1Gtc3ZID1H9Y5Hwxuh2K2vopuX7Lnc92H",
+            "E.E. CELESTINA VALENTE LENGENFELDER:1iXaFqBM0AMoZLIqimqQSFPs8KAETeQCC",
+            "E.E. CHÁCARA CAMPONESA:1Av5gvJFQmaCUo4Br5ljSH18srIevQ0s-",
+            "E.E. JARDIM ALEGRIA II:1wVANKmqPdsQWESa-asT1wlR3OtbhQhJr",
+            "E.E. JARDIM DAS ROSAS:1kVsqJ-0LGY6Q3xUGv0Y05Acei06YI4Qd",
+            "E.E. JARDIM SILVIA II:1m1y6O1objtb5ozJ6gSTLlHLBnZ2M1EIU",
+            "E.E. JOSÉ DE BARROS MARTINS:1kVZ7HwGNdLY0fpNEqwuIJHZLjOJmH-2K",
+            "E.E. LENITA CORRÊA CAMARGO:1fBt0i7fUPYoLUpQen4cjDNFC_vvk5uMr",
+            "E.E. LYDIA SCALET WALKER:19u5eKtvQ7J7cp0E_sSxWcHCsQte7gG31",
+            "E.E. PARQUE CENTO E VINTE II:12sBUk4viDiEEfUYTrlbmYdnOGD805iuX",
+            "E.E. PEDRO PAULO AGUIAR:1FzL4TLs_gFgs4X-IrPrbJPGhXoBoOTNI",
+            "E.E. ROGÉRIO LEVORIN:1o7ZXCG82_6ddXyCAaxwn5jrVUAIsnuQR",
+            "E.E. ULYSSES SANCHES RAMIRES:1BmJRbVuMneg1ssKly5jBfdx2f86qsHhI",
+            "E.E. VINCENZO LOBASSI:1127_qKS4F87q8AlmVdW4vkXkELc9nmeE"
+        ],
+        rocha: [
+            "E.E. ADAIL JARBAS DUCLOS:1qUsgv-0GDhmvnRl0sPD6r43FfqEzWQpx","E.E. AZEVEDO SOARES:1yZm7YfgG9BqSX6vIGwf5IX_gZQiMPxeV","E.E. BENEDITO APARECIDO TAVARES:1EY6IpBucjNINv3SfxQh0CGb3WyT1OKzi",
+            "E.E. BENEDITO FAGUNDES MARQUES:1Bfg5-3I0AZNYF2RZjQAzfKyGdOrTzuzf","E.E. DOMINGOS CAMBIAGHI:1dpVwkYQGFnXFCbPiiPa6ncyIiVQUhSBa","E.E. ELVIRA PARADA MANGA:151k4-9VzzVVwidgVG-o12yTkZm2aqM5f",
+            "E.E. IRACI SARTORI VIEIRA:1yve6uUTYDyAntNAbIfjT6mHP0j9kkg4R","E.E. ISAURA DE MIRANDA BOTTO:10h_8Iw3jGiNwkrOtsQYULbXq12MRbbMA","E.E. IVONE DOS ANJOS SILVA CAMPOS:1fzm5USGsd7HAeNMcUoDm5Zv7Mv6UnopN",
+            "E.E. JOCIMARA VIEIRA DA SILVA:16qHBv6xBE1MhRODIeNIlWOn_w3re13kf","E.E. JOSÉ PARADA:1aFGvKZh2wTuTq3KJuXOOFk69an4FxyYG","E.E. KÁTIA MARIA TARIFA LEME TONELLI:1tZkPG0-UvwUN7-amZQVWEfZMk5w4phZx",
+            "E.E. LUIZ ALEXANDRE DOS SANTOS:1PMG-w2Y41x6s3o_2PqMyqJx74mwZTugn","E.E. PAULO DUARTE:17VVTThvFFDcvNz8ZVzAtggPzCQA7-Mkc","E.E. PEDRO LELIS DE SOUZA:1tpvssACvrbWsqN4gcsYUaG0DCfMuInmI",
+            "E.E. RITUCO MITANI:14bMwhutxTZBSyn9eL4ifrEumE0NZ0Cpm","E.E. ZILTON BICUDO:1JvvdbYPRnOQeo0lumYc8W25klAcWShaq"
+        ],
+        mairipora: [
+            "E.E. ARTHUR WEINGRILL:1ZLcR3rE5fJNTOe_55eGbidHBfe0-_ZjV","E.E. BAIRRO DO ITAIM:1NRNO9VyMCayuqNYzsX_5To95JTIhmT7k","E.E. CARLOS AUGUSTO DE PÁDUA FLEURY:19ayb3wGyNGtBW-zc6y7G4AYqCNsbpX3J",
+            "E.E. HERMELINA DE ALBUQUERQUE PASSARELLA:1S2XvGLRHghnQZJQIEc-rWkKekdcs3Crm","E.E. JARDIM SÃO FRANCISCO:1eL2lzglUZt5Zny32_XovHG56wqA4yLIp","E.E. JOSÉ ROBERTO MELCHIOR:1ZpJbPiNIZLl97BHwctjs6tp7iQR7KcPD",
+            "E.E. MARIA ZEZA GOMES DE OLIVEIRA:1bcZXSC2t0l2bGf7LR-ma-BTy1Lz2jhBq","E.E. NAIR HANNICKEL ROMARO:1pMV_S3Hc5hwmnVMjRsxKfmSWmdRO7Qmr","E.E. NIDE ZAIM CARDOSO:1mrXUvO0riTPD5fDMCu5sdNTz4e9n-tZY",
+            "E.E. ODARICO OLIVEIRA NASCIMENTO:1B1HMWdH69LYL3MhsF6lnJ6dK_-aWKS6O","E.E. OZILDE ALBUQUERQUE PASSARELLA:1wyuGjP-9PgD6xNUQqCQ_d-eX5gEzMxyT","E.E. PEDRO GALRÃO DO NASCIMENTO:10R4pYBDM9vMr2ecS9yN5jnBUPPK_ZN23",
+            "E.E. PIETRO PETRI:1jxM5rk4aTb9YBEfFBAl_LO4Enj8xUXgM"
+        ]
+    };
+
+    // Render dinâmico das listas
+    function renderSchoolList(containerId, schoolsArray, regionKey) {
+        const container = document.getElementById(containerId);
+        if(!container) return;
+        container.innerHTML = "";
+        schoolsArray.forEach(school => {
+            let nomeEscola = school.name || school.split(":")[0];
+            let pastaId = school.pastaId || (typeof school === "string" ? school.split(":")[1] : school);
+            const driveLink = `https://drive.google.com/drive/folders/${pastaId}?usp=drive_link`;
+            const div = document.createElement("div");
+            div.className = "subfolder-item";
+            div.innerHTML = `<div class="subfolder-name"><i class="fas fa-school"></i> <span>${nomeEscola}</span></div>
+                             <button class="subfolder-link-docs" onclick="openModalAEE('${nomeEscola.replace(/'/g, "\\'")}', '${driveLink}', '${pastaId}')"><i class="fas fa-file-signature"></i> Documentos AEE</button>`;
+            container.appendChild(div);
+        });
+    }
+
+    // Mapear dados
+    renderSchoolList("lista-caieiras", schoolsDatabase.caieiras, "caieiras");
+    renderSchoolList("lista-cajamar", schoolsDatabase.cajamar, "cajamar");
+    renderSchoolList("lista-morato", schoolsDatabase.morato.map(item => { let [name,id] = item.split(":"); return { name, pastaId:id }; }), "morato");
+    renderSchoolList("lista-rocha", schoolsDatabase.rocha.map(item => { let [name,id] = item.split(":"); return { name, pastaId:id }; }), "rocha");
+    renderSchoolList("lista-mairipora", schoolsDatabase.mairipora.map(item => { let [name,id] = item.split(":"); return { name, pastaId:id }; }), "mairipora");
+
+    // Categorias e links para documentos AEE baseado na Resolução SEDUC 129/2025
+    const documentCategories = {
+        "🔍 Avaliação Pedagógica Inicial (API)": [
+            { name: "Modelo API (SEDUC 129/2025)", url: "Avaliação Pedagógica Inicial – API.html" },
+            { name: "Instrumento - Levantamento Inicial", url: "https://drive.google.com/file/d/1v7bWx8voK5yJbidwUVZZXa7EsCmqTTmg/view?usp=sharing" }
+        ],
+        "📘 Plano de AEE (PAEE)": [
+            { name: "Template PAEE - Atualizado", url: "Plano de Atendimento Educacional Especializado – PAEE.html" },
+            { name: "Metodologia do PAEE", url: "https://drive.google.com/file/d/11wNVVMHrTLNqH2L4tA31r6csweLKGMXN/view?usp=sharing" }
+        ],
+        "📂 Estudo de Caso / Documentação Inicial": [
+            { name: "Estrutura Estudo de Caso", url: "Estudo de Caso.html" },
+            { name: "Ficha de Identificação do Estudante", url: "https://drive.google.com/drive/folders/1vCRx7o3E1CSJlRjV9B-lg482xsuVqeQg?usp=drive_link" }
+        ],
+        "🧠 Currículo Funcional Natural": [
+            { name: "Currículo Funcional - Diretrizes SP", url: "Currículo Funcional Natural – CFN.html" },
+            { name: "Estratégias Adaptativas - AEE", url: "https://drive.google.com/file/d/1v7bWx8voK5yJbidwUVZZXa7EsCmqTTmg/view?usp=sharing" }
+        ],
+        "📊 Relatórios de Acompanhamento": [
+            { name: "Relatório Bimestral AEE", url: "Relatório de Acolhimento e Retorno Bimestral.html" },
+            { name: "Acompanhamento Ensino Colaborativo", url: "Ficha de Identificação do Estudante.html" }
+        ],
+        "📁 Portfólio de Aprendizagem / Evidências": [
+            { name: "Modelo Portfólio Digital", url: "https://drive.google.com/drive/folders/1ClrbfWBdUpWdsVFHRXxZuok4I0RoRNpc/view?usp=sharing" },
+            { name: "Guia para registro de atividades", url: "https://drive.google.com/file/d/1onS5MS5TGKYXARyk0xuoCy6p7Ju-0GSv/view?usp=sharing" }
+        ]
+    };
+
+    function openModalAEE(schoolName, driveFolderLink, pastaId) {
+        const modal = document.getElementById("modalAEE");
+        const modalSchoolDiv = document.getElementById("modalSchoolName");
+        const modalDocList = document.getElementById("modalDocumentList");
+        modalSchoolDiv.innerHTML = `<i class="fas fa-building"></i> ${schoolName} – Documentos do Atendimento Educacional Especializado (AEE)`;
+        let html = `<div style="margin-bottom: 12px;"><a href="${driveFolderLink}" target="_blank" class="doc-btn" style="background:#0a2f6c;color:white;"><i class="fas fa-folder-open"></i> 📁 Pasta principal da escola (Drive)</a></div>`;
+        for (const [category, docs] of Object.entries(documentCategories)) {
+            html += `<div class="doc-category"><h3><i class="fas fa-caret-right"></i> ${category}</h3><div class="doc-links">`;
+            docs.forEach(doc => {
+                html += `<a href="${doc.url}" target="_blank" class="doc-btn"><i class="fas fa-file-pdf"></i> ${doc.name}</a>`;
+            });
+            html += `</div></div>`;
+        }
+        html += `<div class="observacao-nota"><i class="fas fa-gavel"></i> Com base na Resolução SEDUC Nº 129/2025 – Documentos fundamentais para o AEE.</div>`;
+        modalDocList.innerHTML = html;
+        modal.style.display = "flex";
+    }
+
+    function openGlobalDocs(type) {
+        let fakeSchool = "Documentos padrão da rede";
+        let pastaIdGlobal = "1vCRx7o3E1CSJlRjV9B-lg482xsuVqeQg";
+        let driveLinkGlobal = "https://drive.google.com/drive/folders/1vCRx7o3E1CSJlRjV9B-lg482xsuVqeQg?usp=drive_link";
+        if(type === "PAEE") fakeSchool = "Template PAEE (SEDUC 129/2025)";
+        else if(type === "ESTUDO_CASO") fakeSchool = "Modelo Estudo de Caso + API";
+        else if(type === "CURRICULO") fakeSchool = "Currículo Funcional Natural – Guia Prático";
+        openModalAEE(fakeSchool, driveLinkGlobal, pastaIdGlobal);
+    }
+
+    function closeModal() {
+        document.getElementById("modalAEE").style.display = "none";
+    }
+
+    function toggleFolder(folderId) {
+        const container = document.getElementById(folderId);
+        const arrow = document.getElementById(`arrow-${folderId}`);
+        if (container && arrow) {
+            container.classList.toggle('open');
+            arrow.classList.toggle('rotate-180');
+        }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        const term = e.target.value.toLowerCase().trim();
+        const folders = document.querySelectorAll('.folder-card');
+        folders.forEach(folder => {
+            const folderTitle = folder.querySelector('.folder-info h3')?.innerText.toLowerCase() || '';
+            const subfolderItems = folder.querySelectorAll('.subfolder-item');
+            let folderMatch = folderTitle.includes(term);
+            let subfolderMatch = false;
+            subfolderItems.forEach(item => {
+                const text = item.querySelector('.subfolder-name span')?.innerText.toLowerCase() || '';
+                if (text.includes(term)) {
+                    item.style.display = 'flex';
+                    subfolderMatch = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            if (folderMatch || subfolderMatch) {
+                folder.style.display = 'block';
+                if (subfolderMatch) {
+                    const container = folder.querySelector('.subfolder-container');
+                    const arrow = folder.querySelector('.arrow-icon');
+                    if (container) container.classList.add('open');
+                    if (arrow) arrow.classList.add('rotate-180');
+                }
+            } else {
+                folder.style.display = 'none';
+            }
+        });
+    });
+
+    window.onclick = function(event) {
+        const modal = document.getElementById("modalAEE");
+        if (event.target === modal) closeModal();
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Acompanhamento - Sala de Aula</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f4f7fc; padding: 20px; }
+        :root { --azul-escuro: #0a2f6c; --vermelho: #d32f2f; --branco: #fff; --azul-claro: #eef3fb; }
+        .container { max-width: 210mm; margin: 0 auto; background: var(--branco); border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1); }
+        @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 0.8rem; } }
+        header { background: var(--azul-escuro); color: white; padding: 0.6rem 1rem; border-bottom: 4px solid var(--vermelho); border-radius: 20px 20px 0 0; margin-bottom: 1rem; }
+        .header-flex { display: flex; align-items: center; gap: 1rem; }
+        .logo img { max-height: 58px; background: white; padding: 4px; border-radius: 8px; }
+        .cabecalho-secao { background: var(--azul-claro); padding: 0.4rem 1rem; margin: 1rem 0 0.6rem; font-weight: 700; border-left: 5px solid var(--azul-escuro); }
+        .campo { margin-bottom: 0.9rem; }
+        .campo label { font-weight: 600; display: block; }
+        .linha { border-bottom: 1px solid #000; margin: 0.2rem 0 0.5rem; height: 28px; }
+        .row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .col { flex: 1; }
+        .assinatura { margin-top: 1.5rem; border-top: 1px solid #ccc; padding-top: 1rem; }
+        footer { margin-top: 1rem; text-align: center; font-size: 0.7rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div><h2 style="margin:0; color:white;">Relatório de Acompanhamento em Sala de Aula Regular</h2></div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col"><label>Escola:</label><div class="linha"></div></div>
+        <div class="col"><label>Data da observação:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Professor Regente:</label><div class="linha"></div></div>
+        <div class="col"><label>Disciplina/Atividade:</label><div class="linha"></div></div>
+    </div>
+    <div class="cabecalho-secao">Contexto da Aula</div>
+    <div class="campo"><label>Conteúdo / metodologia:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="cabecalho-secao">Participação e barreiras</div>
+    <div class="campo"><label>Como o estudante participou:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Barreiras identificadas:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="cabecalho-secao">Recomendações</div>
+    <div class="campo"><label>Ajustes e encaminhamentos para PAEE/PEI:</label><div class="linha" style="min-height: 50px;"></div></div>
+    <div class="assinatura">
+        <div class="row">
+            <div class="col">_________________________<br>Professor Especializado</div>
+            <div class="col">_________________________<br>Professor Regente</div>
+        </div>
+    </div>
+    <footer>Compartilhar com equipe gestora e anexar na SED.</footer>
+</div>
+</body>
+</html>

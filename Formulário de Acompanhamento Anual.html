@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Anexo I - Acompanhamento Anual | Comissão de Recursos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --cinza-borda: #e0e4e9;
+        }
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--branco);
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+        }
+        @media print {
+            body { background: none; padding: 0; margin: 0; }
+            .container { box-shadow: none; padding: 0.8rem; max-width: 100%; border-radius: 0; }
+            .no-print { display: none; }
+        }
+        header {
+            background-color: var(--azul-escuro);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-bottom: 4px solid var(--vermelho);
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 1.5rem;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            max-height: 58px;
+            background: white;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        .titulo-header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .titulo-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .cabecalho-secao {
+            background: var(--azul-claro);
+            padding: 0.5rem 1rem;
+            margin: 1.2rem 0 0.8rem 0;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-left: 5px solid var(--azul-escuro);
+        }
+        .campo {
+            margin-bottom: 1rem;
+        }
+        .campo label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+        .linha {
+            border-bottom: 1px solid #000;
+            margin-top: 0.2rem;
+            margin-bottom: 0.5rem;
+            height: 28px;
+        }
+        .row {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        .col {
+            flex: 1;
+        }
+        .assinatura {
+            margin-top: 2rem;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #555;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div class="titulo-header">
+                <h1>Formulário de Acompanhamento Anual</h1>
+                <p>Comissão de Recursos Pedagógicos, de Acessibilidade e de Tecnologia Assistiva | Resolução SEDUC nº 129/2025 - Anexo I</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="campo"><label>Unidade Regional de Ensino (URE):</label><div class="linha"></div></div>
+    <div class="campo"><label>Ano de Referência:</label><div class="linha"></div></div>
+
+    <div class="cabecalho-secao">1. Composição da Comissão (mandato bienal)</div>
+    <div class="campo"><label>Membro da Equipe de Educação Especial:</label><div class="linha"></div></div>
+    <div class="campo"><label>Membro da área administrativa da URE:</label><div class="linha"></div></div>
+    <div class="campo"><label>Supervisor de Ensino/Educacional:</label><div class="linha"></div></div>
+    <div class="campo"><label>Data da designação (DOE):</label><div class="linha"></div></div>
+
+    <div class="cabecalho-secao">2. Diagnóstico das Unidades Escolares</div>
+    <div class="campo"><label>Total de escolas diagnosticadas no ano:</label><div class="linha"></div></div>
+    <div class="campo"><label>Principais demandas (recursos pedagógicos acessíveis):</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Demandas de acessibilidade arquitetônica/comunicacional:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Demandas de Tecnologia Assistiva:</label><div class="linha" style="min-height: 40px;"></div></div>
+
+    <div class="cabecalho-secao">3. Ações Técnicas e Pedagógicas Realizadas</div>
+    <div class="campo"><label>Apoio técnico-pedagógico (formações, orientações, visitas):</label><div class="linha" style="min-height: 50px;"></div></div>
+    <div class="campo"><label>Encaminhamentos para aquisição via PDDE Paulista:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Articulação com AEE, Ensino Colaborativo e rede de proteção:</label><div class="linha" style="min-height: 40px;"></div></div>
+
+    <div class="cabecalho-secao">4. Acompanhamento e Funcionalidade dos Recursos</div>
+    <div class="campo"><label>Recursos mais demandados e efetivos:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Ajustes ou redirecionamentos realizados:</label><div class="linha" style="min-height: 40px;"></div></div>
+
+    <div class="cabecalho-secao">5. Observações e Encaminhamentos para o Próximo Ano</div>
+    <div class="campo"><label>Pontos críticos e recomendações:</label><div class="linha" style="min-height: 60px;"></div></div>
+
+    <div class="assinatura">
+        <div class="row">
+            <div class="col">_________________________<br>Presidente da Comissão</div>
+            <div class="col">_________________________<br>Membro 1</div>
+            <div class="col">_________________________<br>Membro 2</div>
+        </div>
+    </div>
+    <footer>Documento orientador – Resolução SEDUC nº 129/2025 – Anexo I</footer>
+</div>
+</body>
+</html>

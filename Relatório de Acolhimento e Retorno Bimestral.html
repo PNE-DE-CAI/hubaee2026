@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Acolhimento Bimestral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f4f7fc; padding: 20px; }
+        :root { --azul-escuro: #0a2f6c; --azul-claro: #eef3fb; --vermelho: #d32f2f; --branco: #fff; }
+        .container { max-width: 210mm; margin: 0 auto; background: var(--branco); border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1); }
+        @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 0.8rem; } }
+        header { background: var(--azul-escuro); color: white; padding: 0.6rem 1rem; border-bottom: 4px solid var(--vermelho); border-radius: 20px 20px 0 0; margin-bottom: 1rem; }
+        .header-flex { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .logo img { max-height: 58px; background: white; padding: 4px; border-radius: 8px; }
+        .titulo-header h1 { font-size: 1.3rem; font-weight: 600; }
+        .cabecalho-secao { background: var(--azul-claro); padding: 0.4rem 1rem; margin: 1rem 0 0.6rem; font-weight: 700; border-left: 5px solid var(--azul-escuro); }
+        .campo { margin-bottom: 0.9rem; }
+        .campo label { font-weight: 600; display: block; }
+        .linha { border-bottom: 1px solid #000; margin: 0.2rem 0 0.5rem; height: 28px; }
+        .row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .col { flex: 1; }
+        .assinatura { margin-top: 1.8rem; border-top: 1px solid #ccc; padding-top: 1rem; }
+        footer { margin-top: 1rem; text-align: center; font-size: 0.7rem; color: #555; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div class="titulo-header"><h1>Relatório de Acolhimento e Retorno Bimestral</h1><p>Anexo V – Resolução SEDUC 129/2025</p></div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col"><label>Estudante:</label><div class="linha"></div></div>
+        <div class="col"><label>Data do acolhimento/retorno:</label><div class="linha"></div></div>
+        <div class="col"><label>Bimestre:</label><div class="linha"></div></div>
+    </div>
+    <div class="cabecalho-secao">1. Eixos do Atendimento (PAEE)</div>
+    <div class="campo"><label>Ações e recursos disponibilizados:</label><div class="linha" style="min-height: 50px;"></div></div>
+    <div class="cabecalho-secao">2. Percepção da Família</div>
+    <div class="campo"><label>Avanços observados:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Dificuldades / sugestões:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="cabecalho-secao">3. Devolutiva da Equipe Escolar</div>
+    <div class="campo"><label>Progressos acadêmicos e socioemocionais:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Desafios e encaminhamentos:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="assinatura">
+        <div class="row">
+            <div class="col">_________________________<br>Professor Especializado</div>
+            <div class="col">_________________________<br>Responsável</div>
+        </div>
+    </div>
+    <footer>Registro obrigatório do diálogo família-escola.</footer>
+</div>
+</body>
+</html>

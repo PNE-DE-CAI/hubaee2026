@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>API - Avaliação Pedagógica Inicial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --cinza-borda: #e0e4e9;
+        }
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--branco);
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0.8rem;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        header {
+            background-color: var(--azul-escuro);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-bottom: 4px solid var(--vermelho);
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 1.5rem;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            max-height: 58px;
+            background: white;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        .titulo-header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .titulo-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .cabecalho-secao {
+            background: var(--azul-claro);
+            padding: 0.5rem 1rem;
+            margin: 1.2rem 0 0.8rem 0;
+            font-weight: 700;
+            font-size: 1rem;
+            border-left: 5px solid var(--azul-escuro);
+        }
+        .campo {
+            margin-bottom: 1rem;
+        }
+        .campo label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+        .linha {
+            border-bottom: 1px solid #000;
+            margin-top: 0.2rem;
+            margin-bottom: 0.5rem;
+            height: 28px;
+        }
+        .linha-grande {
+            min-height: 45px;
+            border-bottom: 1px solid #000;
+            margin-bottom: 0.8rem;
+        }
+        .row {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        .col {
+            flex: 1;
+        }
+        .checkbox-group {
+            margin: 0.5rem 0;
+        }
+        .checkbox-group label {
+            font-weight: normal;
+            display: inline;
+            margin-left: 0.3rem;
+        }
+        .assinatura {
+            margin-top: 2rem;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #555;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1rem;
+        }
+        .aviso-antigo {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.8rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div class="titulo-header">
+                <h1>Avaliação Pedagógica Inicial – API</h1>
+                <p>Anexo I da Resolução SEDUC nº 21/2023 (uso transitório para estudantes matriculados antes da Resolução 129/2025)</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="aviso-antigo">
+        <strong>📌 Observação importante:</strong> Para estudantes cadastrados no SED em data anterior à publicação da Resolução SEDUC nº 129/2025, a API deve permanecer anexada ao prontuário do estudante, complementada pelo Estudo de Caso (Anexo II da Resolução 129/2025). Este documento não substitui o Estudo de Caso, mas compõe o histórico pedagógico.
+    </div>
+
+    <div class="cabecalho-secao">1. Identificação do Estudante</div>
+    <div class="row">
+        <div class="col"><label>Nome completo:</label><div class="linha"></div></div>
+        <div class="col"><label>Data de nascimento:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>RA (Registro do Aluno):</label><div class="linha"></div></div>
+        <div class="col"><label>Escola:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Ano/Série:</label><div class="linha"></div></div>
+        <div class="col"><label>Turma:</label><div class="linha"></div></div>
+        <div class="col"><label>Turno:</label><div class="linha"></div></div>
+    </div>
+
+    <div class="cabecalho-secao">2. Histórico Escolar e Informações da Família</div>
+    <div class="campo"><label>Histórico de escolarização (repetências, escolas anteriores, frequência):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Participação da família no processo educativo:</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Rede de apoio (saúde, assistência social, terapias):</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">3. Observações Pedagógicas Iniciais</div>
+    <div class="campo"><label>Potencialidades e interesses do estudante:</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Dificuldades / barreiras percebidas no ambiente escolar:</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Comunicação e interação social:</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Autonomia e atividades de vida diária:</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Desenvolvimento cognitivo, atenção e memória:</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">4. Habilidades e Competências Observadas</div>
+    <div class="checkbox-group">
+        <input type="checkbox"> <label>Leitura e escrita (alfabética/silábica/outro): ___________________</label>
+    </div>
+    <div class="checkbox-group">
+        <input type="checkbox"> <label>Raciocínio lógico-matemático (identificar, comparar, resolver problemas simples):</label>
+    </div>
+    <div class="checkbox-group">
+        <input type="checkbox"> <label>Comunicação oral e expressão de necessidades:</label>
+    </div>
+    <div class="checkbox-group">
+        <input type="checkbox"> <label>Interação com pares e adultos:</label>
+    </div>
+    <div class="campo"><label>Outras observações relevantes:</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">5. Encaminhamentos e Ações Imediatas</div>
+    <div class="campo"><label>Recursos e adaptações sugeridas (TA, mobiliário, comunicação alternativa):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Necessidade de encaminhamento para serviços de apoio (saúde, assistência social):</label><div class="linha-grande"></div></div>
+    <div class="campo"><label>Providências já adotadas pela escola:</label><div class="linha-grande"></div></div>
+
+    <div class="cabecalho-secao">6. Responsáveis pela Avaliação</div>
+    <div class="row">
+        <div class="col"><label>Professor Especializado (nome e RF):</label><div class="linha"></div></div>
+        <div class="col"><label>Professor Regente (se houver colaboração):</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Coordenador de Gestão Pedagógica:</label><div class="linha"></div></div>
+        <div class="col"><label>Diretor de Escola:</label><div class="linha"></div></div>
+    </div>
+
+    <div class="assinatura">
+        <div class="row">
+            <div class="col">_________________________<br>Professor Especializado</div>
+            <div class="col">_________________________<br>Coordenador de Gestão Pedagógica</div>
+            <div class="col">_________________________<br>Diretor de Escola/Escolar</div>
+        </div>
+        <div class="campo" style="margin-top: 1rem;">
+            <label>Data da avaliação:</label><div class="linha" style="width: 40%;"></div>
+        </div>
+    </div>
+
+    <footer>
+        A API deve ser digitalizada e anexada ao prontuário do estudante na SED (aba "Deficiência"), complementando o Estudo de Caso quando se tratar de matrícula anterior à Resolução 129/2025.<br>
+        Fonte: Anexo I da Resolução SEDUC nº 21/2023 – vigência anterior, mantida para fins de transição documental.
+    </footer>
+</div>
+</body>
+</html>

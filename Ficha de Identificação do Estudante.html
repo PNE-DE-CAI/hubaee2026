@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Identificação do Estudante - Estudo de Caso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --cinza-borda: #e0e4e9;
+        }
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--branco);
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0.8rem;
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+        header {
+            background-color: var(--azul-escuro);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-bottom: 4px solid var(--vermelho);
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 1.5rem;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            max-height: 58px;
+            background: white;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        .titulo-header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .titulo-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 1rem 0 1rem 0;
+        }
+        .cabecalho-secao {
+            background: var(--azul-claro);
+            padding: 0.5rem 1rem;
+            margin: 1.2rem 0 0.8rem;
+            font-weight: 700;
+            font-size: 1rem;
+            border-left: 5px solid var(--azul-escuro);
+        }
+        .campo {
+            margin-bottom: 0.9rem;
+        }
+        .campo label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+        }
+        .linha {
+            border-bottom: 1px solid #000;
+            margin-top: 0.2rem;
+            margin-bottom: 0.4rem;
+            height: 28px;
+        }
+        .linha-menor {
+            border-bottom: 1px solid #000;
+            margin-top: 0.2rem;
+            margin-bottom: 0.4rem;
+            height: 22px;
+        }
+        .row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        .col {
+            flex: 1;
+        }
+        .col-2 {
+            flex: 2;
+        }
+        .assinatura {
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1rem;
+        }
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #555;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 0.8rem;
+        }
+        .obs {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div class="titulo-header">
+                <h1>Ficha de Identificação do Estudante</h1>
+                <p>Documento integrante do Estudo de Caso (Anexo II – Resolução SEDUC nº 129/2025)</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="cabecalho-secao">1. Dados Pessoais</div>
+    <div class="row">
+        <div class="col"><label>Nome completo do estudante:</label><div class="linha"></div></div>
+        <div class="col"><label>Data de nascimento:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Naturalidade (cidade/UF):</label><div class="linha"></div></div>
+        <div class="col"><label>Nacionalidade:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>RG / Registro Geral (se houver):</label><div class="linha"></div></div>
+        <div class="col"><label>CPF (se houver):</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Sexo:</label><div class="linha"></div></div>
+        <div class="col"><label>Raça/cor autodeclarada:</label><div class="linha"></div></div>
+    </div>
+    <div class="campo"><label>Endereço completo (rua, número, complemento, bairro):</label><div class="linha"></div></div>
+    <div class="row">
+        <div class="col"><label>Cidade:</label><div class="linha"></div></div>
+        <div class="col"><label>CEP:</label><div class="linha"></div></div>
+        <div class="col"><label>Zona: ( ) Urbana  ( ) Rural</label><div class="linha-menor"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Telefone fixo:</label><div class="linha"></div></div>
+        <div class="col"><label>Celular (contato principal):</label><div class="linha"></div></div>
+        <div class="col"><label>E-mail (se houver):</label><div class="linha"></div></div>
+    </div>
+
+    <div class="cabecalho-secao">2. Informações Escolares</div>
+    <div class="row">
+        <div class="col"><label>Escola (nome):</label><div class="linha"></div></div>
+        <div class="col"><label>Unidade Regional de Ensino (URE):</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>RA (Registro do Aluno):</label><div class="linha"></div></div>
+        <div class="col"><label>Ano/Série / Turma:</label><div class="linha"></div></div>
+        <div class="col"><label>Turno:</label><div class="linha"></div></div>
+    </div>
+    <div class="campo"><label>Data da matrícula na escola atual:</label><div class="linha" style="width: 40%;"></div></div>
+    <div class="campo"><label>Histórico de transferências (escolas anteriores, com anos):</label><div class="linha-grande" style="min-height: 40px; border-bottom: 1px solid #000;"></div></div>
+
+    <div class="cabecalho-secao">3. Informações da Família e Responsáveis</div>
+    <div class="campo"><label>Nome do pai (ou responsável masculino):</label><div class="linha"></div></div>
+    <div class="campo"><label>Nome da mãe (ou responsável feminino):</label><div class="linha"></div></div>
+    <div class="row">
+        <div class="col"><label>Grau de parentesco do responsável principal:</label><div class="linha"></div></div>
+        <div class="col"><label>Telefone do responsável principal:</label><div class="linha"></div></div>
+    </div>
+    <div class="campo"><label>Outras pessoas de referência (avós, tios, cuidadores):</label><div class="linha"></div></div>
+    <div class="campo"><label>Benefícios sociais recebidos pela família (BPC, Bolsa Família, outros):</label><div class="linha"></div></div>
+
+    <div class="cabecalho-secao">4. Condições de Saúde e Acessibilidade</div>
+    <div class="campo"><label>Deficiência/Transtorno/Altas Habilidades (conforme documentação):</label><div class="linha"></div></div>
+    <div class="campo"><label>CID principal (se houver diagnóstico formal):</label><div class="linha" style="width: 50%;"></div></div>
+    <div class="campo"><label>Medicações de uso contínuo (nome, dosagem, horário):</label><div class="linha-grande" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Profissionais de saúde que acompanham o estudante (médico, fonoaudiólogo, terapeuta ocupacional, psicólogo, etc.):</label><div class="linha-grande" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Necessidades específicas de acessibilidade (física, comunicacional, tecnológica):</label><div class="linha-grande" style="min-height: 40px;"></div></div>
+
+    <div class="cabecalho-secao">5. Documentos Anexados (checklist)</div>
+    <div class="row">
+        <div class="col"><input type="checkbox"> Certidão de nascimento / RG</div>
+        <div class="col"><input type="checkbox"> Comprovante de residência</div>
+    </div>
+    <div class="row">
+        <div class="col"><input type="checkbox"> Laudo médico / relatório multidisciplinar (se houver)</div>
+        <div class="col"><input type="checkbox"> Documento de identificação dos responsáveis</div>
+    </div>
+    <div class="row">
+        <div class="col"><input type="checkbox"> Carteira de vacinação atualizada</div>
+        <div class="col"><input type="checkbox"> Número do SUS / plano de saúde (se houver)</div>
+    </div>
+    <div class="obs">Observação: a falta de laudo não impede a matrícula nem o Atendimento Educacional Especializado – AEE (conforme Decreto nº 67.635/2023 e Resolução SEDUC nº 129/2025).</div>
+
+    <div class="assinatura">
+        <div class="row">
+            <div class="col">_________________________<br>Assinatura do Responsável</div>
+            <div class="col">_________________________<br>Professor Especializado (ciência)</div>
+        </div>
+        <div class="row" style="margin-top: 0.8rem;">
+            <div class="col">_________________________<br>Coordenador de Gestão Pedagógica</div>
+            <div class="col">_________________________<br>Diretor de Escola/Escolar</div>
+        </div>
+        <div class="campo" style="margin-top: 1rem;">
+            <label>Data de preenchimento:</label><div class="linha" style="width: 40%;"></div>
+        </div>
+    </div>
+
+    <footer>
+        A Ficha de Identificação deve compor o Estudo de Caso (Anexo II) e ser mantida no portfólio do estudante, além de digitalizada na Secretaria Escolar Digital – SED.<br>
+        Resolução SEDUC nº 129/2025 – Documento Orientador da Política de Educação Especial do Estado de São Paulo.
+    </footer>
+</div>
+</body>
+</html>

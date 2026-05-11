@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PAEE - Plano de Atendimento Educacional Especializado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f4f7fc; padding: 20px; }
+        :root { --azul-escuro: #0a2f6c; --azul-claro: #eef3fb; --vermelho: #d32f2f; --branco: #fff; --cinza-borda: #e0e4e9; }
+        .container { max-width: 210mm; margin: 0 auto; background: var(--branco); border-radius: 20px; padding: 1.5rem 2rem; box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1); }
+        @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 0.8rem; } }
+        header { background: var(--azul-escuro); color: white; padding: 0.6rem 1rem; border-bottom: 4px solid var(--vermelho); border-radius: 20px 20px 0 0; margin-bottom: 1.5rem; }
+        .header-flex { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .logo img { max-height: 58px; background: white; padding: 4px; border-radius: 8px; }
+        .titulo-header h1 { font-size: 1.4rem; font-weight: 600; }
+        .titulo-header p { font-size: 0.8rem; opacity: 0.9; }
+        .cabecalho-secao { background: var(--azul-claro); padding: 0.4rem 1rem; margin: 1.2rem 0 0.8rem; font-weight: 700; border-left: 5px solid var(--azul-escuro); }
+        .campo { margin-bottom: 0.9rem; }
+        .campo label { font-weight: 600; display: block; font-size: 0.85rem; }
+        .linha { border-bottom: 1px solid #000; margin: 0.2rem 0 0.5rem; height: 28px; }
+        .row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .col { flex: 1; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { border: 1px solid var(--cinza-borda); padding: 8px; vertical-align: top; font-size: 0.8rem; }
+        th { background: var(--azul-escuro); color: white; }
+        .assinatura { margin-top: 1.8rem; border-top: 1px solid var(--cinza-borda); padding-top: 1.2rem; }
+        footer { margin-top: 1.5rem; text-align: center; font-size: 0.7rem; color: #555; border-top: 1px solid var(--cinza-borda); padding-top: 1rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div class="titulo-header">
+                <h1>Plano de Atendimento Educacional Especializado – PAEE</h1>
+                <p>Anexo III – Resolução SEDUC 129/2025 (atualização bimestral)</p>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col"><label>Nome do estudante:</label><div class="linha"></div></div>
+        <div class="col"><label>Ano/Série:</label><div class="linha"></div></div>
+    </div>
+    <div class="row">
+        <div class="col"><label>Deficiência/TEA/AH/SD:</label><div class="linha"></div></div>
+        <div class="col"><label>Período:</label><div class="linha"></div></div>
+    </div>
+    <div class="cabecalho-secao">Organização do AEE</div>
+    <div class="campo"><label>Local: ( ) Sala de Recursos  ( ) Itinerante</label><div class="linha"></div></div>
+    <div class="campo"><label>Período: ( ) Contraturno  ( ) Durante jornada (PEI)  ( ) Turno extra</label><div class="linha"></div></div>
+    <div class="row"><div class="col"><label>Carga horária semanal:</label><div class="linha"></div></div><div class="col"><label>Formato: ( ) Individual  ( ) Compartilhado</label><div class="linha"></div></div></div>
+    <div class="campo"><label>Dias e horários:</label><div class="linha"></div></div>
+
+    <div class="cabecalho-secao">Atividades no AEE</div>
+    <div class="campo"><label>Comunicação e interação:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Motricidade e autonomia:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Raciocínio lógico:</label><div class="linha" style="min-height: 40px;"></div></div>
+    <div class="campo"><label>Competências socioemocionais:</label><div class="linha" style="min-height: 40px;"></div></div>
+
+    <div class="cabecalho-secao">Planejamento por Bimestre</div>
+    <table> <thead><tr><th>Bimestre</th><th>Ações específicas</th></tr></thead>
+    <tr><td>1º</td><td style="height: 45px;"></td></tr>
+    <tr><td>2º</td><td style="height: 45px;"></td></tr>
+    <tr><td>3º</td><td style="height: 45px;"></td></tr>
+    <tr><td>4º</td><td style="height: 45px;"></td></tr> </table>
+
+    <div class="assinatura">
+        <div class="row">
+            <div class="col">_________________________<br>Professor Especializado</div>
+            <div class="col">_________________________<br>Professor Regente</div>
+            <div class="col">_________________________<br>Coordenador Pedagógico</div>
+        </div>
+        <div class="campo"><label>Data da revisão bimestral:</label><div class="linha" style="width: 40%;"></div></div>
+    </div>
+    <footer>Documento obrigatório – deve ser anexado na SED e atualizado bimestralmente.</footer>
+</div>
+</body>
+</html>
