@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Guias Digitais - Acompanhamento Educação Especial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --cinza-borda: #e0e4e9;
+        }
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--branco);
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0.8rem;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        header {
+            background-color: var(--azul-escuro);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-bottom: 4px solid var(--vermelho);
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 1.5rem;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            max-height: 58px;
+            background: white;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        .titulo-header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .titulo-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            color: var(--vermelho);
+        }
+        .cabecalho-secao {
+            background: var(--azul-claro);
+            padding: 0.5rem 1rem;
+            margin: 1.2rem 0 0.8rem;
+            font-weight: 700;
+            font-size: 1rem;
+            border-left: 5px solid var(--azul-escuro);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin: 1rem 0;
+        }
+        .card {
+            background: var(--branco);
+            border: 1px solid var(--cinza-borda);
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--azul-escuro);
+        }
+        .card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--azul-escuro);
+            margin-bottom: 0.5rem;
+        }
+        .badge {
+            background: var(--vermelho);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .lista-destaque {
+            list-style: none;
+            padding-left: 0;
+        }
+        .lista-destaque li {
+            padding: 0.3rem 0 0.3rem 1.5rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23d32f2f"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') left center no-repeat;
+            background-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid var(--cinza-borda);
+            padding: 0.6rem;
+            vertical-align: top;
+            font-size: 0.85rem;
+        }
+        th {
+            background: var(--azul-escuro);
+            color: white;
+        }
+        .callout {
+            background: var(--azul-claro);
+            border-left: 5px solid var(--azul-escuro);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+        }
+        .link-doc {
+            color: var(--vermelho);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #555;
+            border-top: 1px solid var(--cinza-borda);
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-flex">
+            <div class="logo"><img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC"></div>
+            <div class="titulo-header">
+                <h1>Modelos Digitais para Acompanhamento Pedagógico</h1>
+                <p>Orientações para criação de portfólios, murais e registros interativos na Educação Especial</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="cabecalho-secao">💡 Por que utilizar recursos digitais no acompanhamento?</div>
+    <p>Os registros digitais permitem maior interatividade, compartilhamento em tempo real com a equipe escolar e família, além de valorizar as produções dos estudantes. Quando bem planejados, favorecem a comunicação visual, a organização do progresso e o engajamento de todos os envolvidos no processo de inclusão.</p>
+
+    <div class="cabecalho-secao">📁 1. Portfólio Digital do Estudante</div>
+    <div class="card-grid">
+        <div class="card">
+            <span class="badge">Google Sites</span>
+            <h4>Site pessoal do estudante</h4>
+            <p>Crie um site simples com abas: "Quem sou eu", "Minhas produções", "Meus avanços", "Atividades preferidas". Ideal para organizar fotos, vídeos, textos e registros de evolução.</p>
+            <ul class="lista-destaque">
+                <li>Inclua depoimentos do estudante (áudio/vídeo)</li>
+                <li>Compartilhe link com a família e equipe gestora</li>
+            </ul>
+        </div>
+        <div class="card">
+            <span class="badge">Apresentações</span>
+            <h4>Slide AEE (Google Slides / PowerPoint)</h4>
+            <p>Slide único com resumo bimestral: objetivos trabalhados, recursos utilizados, fotos de atividades na Sala de Recursos e na sala comum.</p>
+            <p><strong>Sugestão de estrutura:</strong> capa do bimestre → habilidades desenvolvidas → evidências (imagens) → próximos passos.</p>
+        </div>
+        <div class="card">
+            <span class="badge">Documento colaborativo</span>
+            <h4>Registro compartilhado (Google Docs)</h4>
+            <p>Documento editável por professor especializado, professor regente e família. Contém observações semanais, dicas de adaptações e conquistas.</p>
+        </div>
+    </div>
+
+    <div class="cabecalho-secao">🖼️ 2. Murais Digitais Interativos</div>
+    <p>Murais digitais são ótimos para expor trabalhos, cronogramas e trocar mensagens entre escola, estudante e família.</p>
+    <div class="card-grid">
+        <div class="card">
+            <span class="badge">Padlet</span>
+            <h4>Mural do AEE</h4>
+            <p>Crie colunas para: "Atividades da semana", "Dica do professor especializado", "Recado da família", "Parabéns, você avançou!".</p>
+        </div>
+        <div class="card">
+            <span class="badge">Jamboard / Miro</span>
+            <h4>Painel de rotina e combinados</h4>
+            <p>Organize a rotina diária do estudante com imagens e setas. Pode ser usado como suporte visual para alunos com TEA.</p>
+        </div>
+        <div class="card">
+            <span class="badge">Canva</span>
+            <h4>Mural de conquistas</h4>
+            <p>Design visual atrativo para mostrar metas alcançadas, fotos de projetos e certificados simbólicos.</p>
+        </div>
+    </div>
+
+    <div class="cabecalho-secao">📊 3. Slides de Acompanhamento Bimestral (template sugerido)</div>
+    <p>Use uma apresentação de slides para cada estudante ou turma, atualizada bimestralmente e apresentada em reuniões de ATPC ou para a família.</p>
+    <table>
+        <thead><tr><th>Slide</th><th>Conteúdo sugerido</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>Capa: nome do estudante, professor especializado, período</td></tr>
+            <tr><td>2</td><td>Objetivos do PAEE para o bimestre (com ícones de representação)</td></tr>
+            <tr><td>3</td><td>Atividades realizadas na Sala de Recursos (fotos ou prints)</td></tr>
+            <tr><td>4</td><td>Atividades na sala comum – como o estudante participou (registro descritivo + imagem)</td></tr>
+            <tr><td>5</td><td>Recursos de TA utilizados e resultados</td></tr>
+            <tr><td>6</td><td>Avaliação do progresso (gráfico simples ou escala de autonomia)</td></tr>
+            <tr><td>7</td><td>Metas para o próximo bimestre e ações combinadas com a família</td></tr>
+        </tbody>
+    </table>
+
+    <div class="cabecalho-secao">🎥 4. Vídeos e Narrativas Digitais</div>
+    <div class="card-grid">
+        <div class="card">
+            <h4>Diário de bordo em vídeo</h4>
+            <p>Gravações curtas (1-2 minutos) do estudante falando sobre o que aprendeu ou mostrando uma atividade. Excelente para avaliar comunicação e autoexpressão.</p>
+        </div>
+        <div class="card">
+            <h4>Tour guiado pelo portfólio</h4>
+            <p>O próprio estudante (com apoio) explica suas produções no portfólio digital. O vídeo pode ser enviado aos familiares.</p>
+        </div>
+    </div>
+
+    <div class="cabecalho-secao">✅ 5. Checklist de Boas Práticas para Modelos Digitais</div>
+    <ul class="lista-destaque">
+        <li><strong>Acessibilidade:</strong> utilize legendas em vídeos, textos com fonte legível, contraste adequado e descrição de imagens.</li>
+        <li><strong>Compartilhamento controlado:</strong> links com permissão de visualização apenas para professores e família (não públicos).</li>
+        <li><strong>Periodicidade:</strong> atualize os materiais bimestralmente, alinhando ao PAEE e ao PEI.</li>
+        <li><strong>Integração com SED:</strong> os links dos portfólios/slides podem ser anexados no campo "Documentos" da Secretaria Escolar Digital.</li>
+        <li><strong>Envolvimento do estudante:</strong> sempre que possível, permita que ele escolha cores, imagens ou grave áudios para o mural.</li>
+    </ul>
+
+    <div class="cabecalho-secao">🔗 Sugestões de Ferramentas Gratuitas</div>
+    <div class="callout">
+        <strong>Google Workspace for Education</strong> (Sites, Slides, Docs, Forms, Jamboard) – já disponível para as escolas estaduais.<br>
+        <strong>Canva para Educação</strong> – versão gratuita com templates acessíveis.<br>
+        <strong>Padlet</strong> – plano gratuito com limite de 3 murais, suficiente para acompanhamento bimestral.<br>
+        <strong>Loom / ScreenCastify</strong> – gravação de tela e vídeo para explicar atividades.<br>
+        <strong>QR Code</strong> – gere QR Codes para acesso rápido ao portfólio do estudante (pode ser colado no caderno ou na agenda).
+    </div>
+
+    <div class="cabecalho-secao">📌 Exemplo Prático: Estrutura de um Portfólio no Google Sites</div>
+    <p><strong>Endereço fictício:</strong> sites.google.com/escola/estudante-maria</p>
+    <ul class="lista-destaque">
+        <li><strong>Página inicial:</strong> apresentação do estudante com foto (autorizada), interesses e breve histórico.</li>
+        <li><strong>Meu PAEE:</strong> resumo dos objetivos do Plano de Atendimento Educacional Especializado adaptado para linguagem simples (com ícones).</li>
+        <li><strong>Evidências do 1º bimestre:</strong> galeria de fotos das atividades, vídeo curto, comentários do professor.</li>
+        <li><strong>Recursos que me ajudam:</strong> lista das tecnologias assistivas utilizadas e como elas funcionam.</li>
+        <li><strong>Mensagem para a família:</strong> espaço colaborativo (Google Forms embutido) para a família registrar observações.</li>
+    </ul>
+
+    <div class="callout" style="background: #fff1f0; border-left-color: var(--vermelho);">
+        <strong>🎯 Orientações finais:</strong> Os modelos digitais não substituem os documentos oficiais (Estudo de Caso, PAEE, PEI), mas são excelentes ferramentas de acompanhamento visual, motivacional e colaborativo. A equipe gestora pode incentivar sua utilização como complemento ao registro na SED.
+    </div>
+
+    <footer>
+        Secretaria da Educação do Estado de São Paulo – Diretoria de Educação Especial e Inclusão<br>
+        Material de apoio à implementação da Resolução SEDUC nº 129/2025 – Sugestões de recursos digitais para acompanhamento pedagógico.
+    </footer>
+</div>
+</body>
+</html>
